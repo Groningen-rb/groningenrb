@@ -1,9 +1,14 @@
 # Groningen.rb website codebase
 
 
-<!-- ## Setup
+## Setup
 
-`$ vim .env` -->
+* Create `.env` file: `$ vim .env`
+* Add the following data:
+
+    GITHUB_KEY='<your github key>'
+    GITHUB_SECRET='<your github secret>'
+
 
 
 ## Initialize
