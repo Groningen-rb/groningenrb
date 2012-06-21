@@ -15,8 +15,9 @@ gem 'kaminari'
 
 # Authentication
 # gem 'bcrypt-ruby', '~> 3.0.0'
-gem 'omniauth'
-gem 'omniauth-github'
+gem 'omniauth', '~> 1.1.0'
+gem 'omniauth-github', '~> 1.0.1'
+gem 'cancan', '~> 1.6.7'
 
 group :production do
   gem 'thin'
