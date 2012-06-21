@@ -1,5 +1,6 @@
 #home {
   article#upcoming {
+    
     > header {
       > h3 {
         font-size: 36px;
@@ -9,8 +10,14 @@
         text-align: center;
       }
     }
+    
     .details {
       margin-top: 30px;
+      border-radius: 5px;
+      
+//      background: #F2DCC2;
+//      color: #037F8C;
+      
       > .description {
         > p {
           font-family: 'PT Sans', sans-serif;
