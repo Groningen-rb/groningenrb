@@ -13,11 +13,10 @@ gem 'haml'
 gem 'simple_form'
 gem 'kaminari'
 
-# To use ActiveModel has_secure_password
+# Authentication
 # gem 'bcrypt-ruby', '~> 3.0.0'
-
-# To use Jbuilder templates for JSON
-# gem 'jbuilder'
+gem 'omniauth'
+gem 'omniauth-github'
 
 group :production do
   gem 'thin'

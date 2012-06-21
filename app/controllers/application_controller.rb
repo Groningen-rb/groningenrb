@@ -7,4 +7,8 @@ class ApplicationController < ActionController::Base
   def get_archive
     @archive = Edition.past(5)
   end
+  def current_user
+    @current_user ||= User.find(session[:user_id]) if session[:user_id]
+  end
+  helper_method :current_user
 end
