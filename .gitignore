@@ -7,6 +7,9 @@
 # Ignore bundler config
 /.bundle
 
+/.env
+/.foreman
+
 # Ignore the default SQLite database.
 /db/*.sqlite3
 

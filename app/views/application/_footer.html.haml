@@ -1,0 +1,19 @@
+.row
+
+  .span4.archive
+    %h3 Archief
+    - if @archive.any?
+      %ul
+        - @archive.each do |edition|
+          %li[edition]= link_to "Editie ##{edition.id} - #{l(edition.starts_at, format: :date_only)}", edition
+        %li= link_to "meer", :editions
+    - else
+      %p
+        %em Nuttin' here
+
+  .span4.contact
+    %h3 Contact
+  
+  .span4.newsletter
+    %h3 Nieuwsbrief
+    = render 'newsletter_form'

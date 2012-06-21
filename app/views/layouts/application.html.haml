@@ -1,0 +1,36 @@
+!!!
+%html
+  %head
+    %title Groningen.rb
+    = stylesheet_link_tag    "application", media: "all"
+    = javascript_include_tag "application"
+    
+    %meta{ name: "viewport", content: "width=device-width, initial-scale=1.0" }
+    = csrf_meta_tags
+
+  %body
+    %section.container
+    
+      / Header
+      %header= render 'header'
+      / /Header
+      
+      
+      - if content_for?(:sponsors)
+        / Sponsors Large
+        %section.sponsors= yield(:sponsors)
+        / /Sponsors Large
+      
+      / Content
+      %section.content= yield
+      / /Content
+      
+      
+      - if content_for?(:sponsors_small)
+        / Sponsors Small
+        %section.sponsors.small= yield(:sponsors_small) 
+        / /Sponsors Small
+      
+      / Footer
+      %footer= render 'footer'
+      / /Footer

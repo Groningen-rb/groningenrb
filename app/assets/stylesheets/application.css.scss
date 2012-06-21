@@ -8,6 +8,19 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
- *= require_self
- *= require_tree .
+ * require_self
+ * require_tree .
  */
+
+// libs
+@import 'bootstrap.css.scss';
+@import 'bootstrap-responsive.css';
+@import 'mixins.css.scss';
+
+// Fonts
+@import url(http://fonts.googleapis.com/css?family=Pacifico|Cookie);
+@import url(http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic);
+
+// Application
+@import 'layout.css.scss';
+@import 'home.css.scss';
