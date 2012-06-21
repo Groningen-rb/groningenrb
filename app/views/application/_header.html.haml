@@ -1,13 +1,13 @@
-%h1
-  = link_to :root do
-    Groningen
-    %span>.rb
-.social
-  - if current_user
-    %p
-      Logged in met Github als
-      = current_user.name
-      \.
-      = link_to 'Uitloggen', signout_path
-  - else
-    = link_to 'Log in met Github account', '/auth/github'
+.row
+  .span6.offset3
+    %h1
+      = link_to :root do
+        Groningen
+        %span>.rb
+  .span3.social
+    - if current_user
+      %p
+        = "Welkom #{current_user.name}!"
+        = link_to 'Uitloggen', signout_path
+    - else
+      = link_to 'Login met Github', '/auth/github', class: 'btn btn-inverse'

@@ -7,6 +7,10 @@ class EditionsController < ApplicationController
   
   def show
   end
+  
+  def new
+    @edition = Edition.new
+  end
 
   private
   def find_edition

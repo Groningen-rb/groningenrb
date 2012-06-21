@@ -17,3 +17,7 @@
   .span4.newsletter
     %h3 Nieuwsbrief
     = render 'newsletter_form'
+
+- if current_user && current_user.admin?
+  .btn-group
+    = link_to 'Nieuwe editie', [:new, :edition], class: 'btn'
