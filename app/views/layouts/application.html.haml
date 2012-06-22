@@ -15,6 +15,18 @@
       %header= render 'header'
       / /Header
       
+      / Flash Messages
+      %section.alerts
+        - if notice
+          .alert.alert-info
+            = link_to raw('&times;'), '#', class: 'close', data: { dismiss: 'alert' }
+            = notice
+        - if alert
+          .alert
+            = link_to raw('&times;'), '#', class: 'close', data: { dismiss: 'alert' }
+            = alert
+      / /Flash Messages
+      
       
       - if content_for?(:sponsors)
         / Sponsors Large

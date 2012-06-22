@@ -1,6 +1,6 @@
 .row
 
-  .span4.archive
+  .span3.archive
     %h3 Archief
     - if @archive.any?
       %ul
@@ -11,13 +11,26 @@
       %p
         %em Nuttin' here
 
-  .span4.contact
+  .span3.contact
     %h3 Contact
   
-  .span4.newsletter
+  .span6.newsletter
     %h3 Nieuwsbrief
     = render 'newsletter_form'
 
-- if current_user && current_user.admin?
-  .btn-group
-    = link_to 'Nieuwe editie', [:new, :edition], class: 'btn'
+- if can? :manage, :all
+  .navbar.navbar-fixed-bottom
+    .navbar-inner
+      .container
+        %ul.nav
+          %li
+            = link_to [:new, :edition] do
+              %i.icon.icon-plus.icon-white
+              Nieuwe editie
+          %li.divider-vertical
+          %li
+            = link_to :users do
+              Edities
+          %li
+            = link_to :users do
+              Gebruikers

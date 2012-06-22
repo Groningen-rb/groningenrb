@@ -10,18 +10,7 @@
 -#      .thumbnail
 -#        %img{ src: 'http://placehold.it/300x150' }
 
-
-.row#home
-  - if @upcoming
-    %article#upcoming.span12
-      %header
-        %h3
-          Volgende meet-up:
-          = l(@upcoming.starts_at, format: :long)
-      .details.row
-        .description.span8= @upcoming.description
-        .map.span4
-          %ul.thumbnails
-            %li.span4
-              .thumbnail
-                %img{ src: 'http://placehold.it/300x200' }
+- if @upcoming
+  = render @upcoming
+- else
+  = render partial: 'no_edition'
