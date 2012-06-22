@@ -10,6 +10,9 @@ class User < ActiveRecord::Base
   attr_accessible :provider
   attr_accessible :uid
   
+  # Scopes
+  scope :hireable, where(hireable: true)
+  
   
   def self.from_omniauth(auth)
     where(auth.slice('provider', 'uid')).first || create_from_omniauth(auth)
@@ -19,7 +22,7 @@ class User < ActiveRecord::Base
     create! do |user|
       user.provider     = auth['provider']
       user.uid          = auth['uid']
-      user.name         = auth['info']['name']
+      user.name         = auth['info']['nickname']
       user.email        = auth['info']['email']
       user.location     = auth['extra']['raw_info']['location']
       user.gravatar_id  = auth['extra']['raw_info']['gravatar_id']
