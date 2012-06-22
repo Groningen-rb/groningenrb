@@ -12,6 +12,7 @@ html, body {
   
   > section.container {
     margin-top: 20px;
+    margin-bottom: 60px;
     
     > header {
       h1 {
@@ -26,9 +27,6 @@ html, body {
           > span { color: #BC0100; font-size: 48px; font-weight: 400; }
         }
       }
-      .social {
-        text-align: right;
-      }
     }
     
     > footer {
@@ -36,6 +34,9 @@ html, body {
       
       .archive, .contact, .newsletter {
         > h3 { font-size: 32px; line-height: 48px; text-shadow: 0 2px 6px rgba(0, 0, 0, 0.3); }
+      }
+      .newsletter > .well {
+        background: #2C3230;
       }
     }
   }
