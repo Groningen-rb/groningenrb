@@ -6,9 +6,10 @@
 * Create `.env` file: `$ vim .env`
 * Add the following data:
 
-  GITHUB_KEY='your github key'
-  GITHUB_SECRET='your github secret'
-
+```ruby
+GITHUB_KEY='your github key'
+GITHUB_SECRET='your github secret'
+```
 
 
 ## Initialize
