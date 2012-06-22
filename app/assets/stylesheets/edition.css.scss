@@ -1,44 +1,25 @@
 article.edition {
-  
-  > header {
-    > h3 {
-      font-size: 36px;
+      
+  > .description {
+    > h2 {
+      font-size: 30px;
       line-height: 60px;
-      padding: 0 20px;
       text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
-      text-align: center;
+    }
+    
+    > p {
+      font-family: 'Droid Serif', serif;
+      font-size: 16px;
+      line-height: 24px;
+      text-align: justify;
+      text-shadow: 0 1px 1px #666;
+      margin-bottom: 20px;
+      > a {
+        color: #2C3230;
+      }
     }
   }
   
-  .details {
-    margin-top: 30px;
-    border-radius: 5px;
-    
-//      background: #F2DCC2;
-//      color: #037F8C;
-    
-    > .description {
-      
-      > h2 {
-        font-size: 30px;
-        line-height: 60px;
-        text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
-      }
-      
-      > p {
-        font-family: 'Droid Serif', serif;
-        font-size: 16px;
-        line-height: 24px;
-        text-align: justify;
-        text-shadow: 0 1px 1px #666;
-        margin-bottom: 20px;
-        > a {
-          color: #2C3230;
-        }
-      }
-    }
-    > .map {
-      
-    }
-  }
+  > .map {}
+  
 }

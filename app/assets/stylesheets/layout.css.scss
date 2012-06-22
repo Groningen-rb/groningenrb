@@ -3,11 +3,7 @@ html, body {
   background-image: image-url('bg.png');
   background-repeat: repeat;
   color: #F2DCC2;
-  
-//  font-family: 'PT Sans', sans-serif;
-//  font-size: 16px;
-//  line-height: 25px;
-  
+    
   h1, h2, h3, h4, h5 { font-family: 'Cookie', cursive; }
   
   > section.container {
@@ -20,11 +16,24 @@ html, body {
         line-height: 130px; 
         text-shadow: 0 1px 0px rgba(255, 255, 255, 0.4); 
         text-align: center;
-//        font-weight: 600;
+        display: block;
+        height: 150px;
+        
         > a {
           color: #2C3230;
           &:hover { text-decoration: none; }
           > span { color: #BC0100; font-size: 48px; font-weight: 400; }
+        }
+        > small {
+          color: black;
+          font-size: 24px;
+          line-height: 12px;
+          margin: 0;
+          display: block;
+          position: relative;
+          margin-top: -110px;
+          margin-left: 230px;
+          text-align: left;
         }
       }
     }
