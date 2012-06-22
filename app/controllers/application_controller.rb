@@ -6,12 +6,17 @@ class ApplicationController < ActionController::Base
   end
   
   before_filter :get_archive
+  before_filter :get_upcoming
   
   
   private
   
   def get_archive
     @archive = Edition.past(5)
+  end
+  
+  def get_upcoming
+    @upcoming = Edition.upcoming.first
   end
   
   def current_user
