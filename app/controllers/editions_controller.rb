@@ -2,7 +2,7 @@ class EditionsController < ApplicationController
   before_filter :find_edition
 
   def index
-    @editions = Edition.scoped
+    @editions = Edition.archive.page params[:page]
   end
   
   def show
