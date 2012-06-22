@@ -1,0 +1,10 @@
+- if notice || alert
+  %section.alerts
+    - if notice
+      .alert.alert-info
+        = link_to raw('&times;'), '#', class: 'close', data: { dismiss: 'alert' }
+        = notice
+    - if alert
+      .alert
+        = link_to raw('&times;'), '#', class: 'close', data: { dismiss: 'alert' }
+        = alert
