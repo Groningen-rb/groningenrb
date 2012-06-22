@@ -18,6 +18,8 @@ GITHUB_SECRET='your github secret'
 
 `$ rake db:migrate`
 
+`$ rake db:seed` if you want to preload all previous Groningen.rb editions.
+
 
 ## Start the server
 
