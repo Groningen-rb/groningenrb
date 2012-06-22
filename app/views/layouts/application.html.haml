@@ -10,42 +10,10 @@
 
   %body
     %section.container
-    
-      / Header
-      %header= render 'header'
-      / /Header
       
-      / Flash Messages
-      %section.alerts
-        - if notice
-          .alert.alert-info
-            = link_to raw('&times;'), '#', class: 'close', data: { dismiss: 'alert' }
-            = notice
-        - if alert
-          .alert
-            = link_to raw('&times;'), '#', class: 'close', data: { dismiss: 'alert' }
-            = alert
-      / /Flash Messages
-      
-      
-      - if content_for?(:sponsors)
-        / Sponsors Large
-        %section.sponsors= yield(:sponsors)
-        / /Sponsors Large
-      
-      / Content
+      = render 'header'
+      = render 'flash'
       %section.content= yield
-      / /Content
+      = render 'footer'
       
-      
-      - if content_for?(:sponsors_small)
-        / Sponsors Small
-        %section.sponsors.small= yield(:sponsors_small) 
-        / /Sponsors Small
-      
-      / Footer
-      %footer= render 'footer'
-      / /Footer
-      
-      = link_to 'https://github.com/Groningen-rb/groningenrb' do
-        %img{ style: "position: absolute; top: 0; right: 0; border: 0;", src: "https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png", alt: "Fork me on GitHub" }
+      = render 'fork_me'
