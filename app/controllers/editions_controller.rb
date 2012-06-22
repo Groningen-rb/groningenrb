@@ -10,6 +10,16 @@ class EditionsController < ApplicationController
   
   def new
     @edition = Edition.new
+    authorize! :manage, @edition
+  end
+  def create
+    @edition = Edition.new(params[:edition])
+    authorize! :manage, @edition
+    if @edition.save
+      redirect_to @edition, notice: "Editie ##{@edition.id} is aangemaakt."
+    else
+      render :new
+    end
   end
 
   private

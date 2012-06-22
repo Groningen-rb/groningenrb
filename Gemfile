@@ -1,27 +1,38 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.6'
+ruby '1.9.3'
+
+gem 'rails',            '3.2.6'
 
 group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
-  gem 'uglifier', '>= 1.0.3'
+  gem 'sass-rails',     '~> 3.2.3'
+  gem 'coffee-rails',   '~> 3.2.1'
+  gem 'uglifier',       '>= 1.0.3'
 end
 
-gem 'jquery-rails'
-gem 'haml'
-gem 'simple_form'
-gem 'kaminari'
+# Server
+gem 'thin',           '~> 1.3.1'
+
+# Tools
+gem 'jquery-rails',     '~> 2.0.2'
+gem 'haml',             '~> 3.1.6'
+gem 'kaminari',         '~> 0.13.0'
+
+# Data input
+gem 'simple_form',      '~> 2.0.2'
+gem 'redcarpet',        '~> 2.1.1'
+# gem 'chronic',          '~> 0.6.7' # Linguistic datetime input
 
 # Authentication
 # gem 'bcrypt-ruby', '~> 3.0.0'
-gem 'omniauth', '~> 1.1.0'
-gem 'omniauth-github', '~> 1.0.1'
-gem 'cancan', '~> 1.6.7'
+gem 'omniauth',         '~> 1.1.0'
+gem 'omniauth-github',  '~> 1.0.1'
+gem 'cancan',           '~> 1.6.7'
+
+gem 'twitter',          '~> 2.5.0'
 
 group :production do
-  gem 'thin'
-  gem 'pg'
+  gem 'pg',             '~> 0.13.2'
 end
 
 group :development do
@@ -29,6 +40,3 @@ group :development do
   gem 'heroku'
   gem 'foreman'
 end
-
-# To use debugger
-# gem 'debugger'
