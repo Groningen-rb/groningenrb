@@ -1,22 +1,23 @@
-.row
+%footer
+  .row
 
-  .span3.archive
-    %h3 Archief
-    - if @archive.any?
-      %ul
-        - @archive.each do |edition|
-          %li[edition]= link_to "Editie ##{edition.id} - #{l(edition.starts_at, format: :date_only)}", edition
-        %li= link_to "meer", :editions
-    - else
-      %p
-        %em Nuttin' here
+    .span3.archive
+      %h3 Archief
+      - if @archive.any?
+        %ul
+          - @archive.each do |edition|
+            %li[edition]= link_to "Editie ##{edition.id} - #{l(edition.starts_at, format: :date_only)}", edition
+          %li= link_to "meer", :editions
+      - else
+        %p
+          %em Nuttin' here
 
-  .span3.contact
-    %h3 Contact
+    .span3.contact
+      %h3 Contact
   
-  .span6.newsletter
-    %h3 Nieuwsbrief
-    = render 'newsletter_form'
+    .span6.newsletter
+      %h3 Nieuwsbrief
+      = render 'newsletter_form'
 
 - if can? :manage, :all
   .navbar.navbar-fixed-bottom
