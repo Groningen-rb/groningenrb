@@ -1,0 +1,16 @@
+.row
+  %article.span12[@edition]
+    %header
+      %h3
+        - if params[:controller] == 'home'
+          Volgende meet-up:
+        - if params[:controller] == 'editions' && edition.upcoming?
+          %span.upcoming Komend!
+        = l(edition.starts_at, format: :long)
+    .details.row
+      .description.span8= raw(edition.rendered_description)
+      .map.span4
+        %ul.thumbnails
+          %li.span4
+            .thumbnail
+              %img{ src: 'http://placehold.it/300x200' }
