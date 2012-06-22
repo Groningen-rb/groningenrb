@@ -1,5 +1,7 @@
 class Edition < ActiveRecord::Base
   
+  paginates_per 5
+  
   # Attributes (whitelist)
   attr_accessible :description
   attr_accessible :starts_at
@@ -9,7 +11,8 @@ class Edition < ActiveRecord::Base
   
   # Scopes
   scope :upcoming,  where(['starts_at > ?', Time.zone.now + 6.hours]).order('starts_at ASC')
-  scope :past,      lambda { |n| where(['starts_at < ?', Time.zone.now]).order('starts_at DESC').limit(n) }
+  scope :archive,   where(['starts_at < ?', Time.zone.now]).order('starts_at DESC')
+  scope :past,      lambda { |n| archive.order('starts_at DESC').limit(n) }
   
   
   def upcoming?
