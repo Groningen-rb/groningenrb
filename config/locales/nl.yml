@@ -191,10 +191,28 @@ nl:
       short: ! '%d %b %H:%M'
       date_only: ! '%d %B %Y'
     pm: ! '''s middags'
+  
   # remove these aliases after 'activemodel' and 'activerecord' namespaces are removed from Rails repository
   activemodel:
     errors:
       <<: *errors
+  
   activerecord:
+    attributes:
+      user:
+        name: Nickname
+        email: Email adres
+        twitter: Twitter
+        location: Locatie
+        bio: Bio
+        hireable: Beschikbaar voor werk
+        public: Profiel openbaar
+      edition:
+        title: Titel
+        edition_number: "Editie #"
+        doors_open_at: Datum/Tijd
+        location: Locatie
+        body: Beschrijving
+        rendered_body: Beschrijving
     errors:
       <<: *errors

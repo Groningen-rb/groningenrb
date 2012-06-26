@@ -1,0 +1,18 @@
+= simple_form_for @edition, html: { class: 'form-vertical' } do |f|
+  .row
+    .span5
+      = f.input :title, input_html: { class: 'span5' }
+      = f.input :body, input_html: { class: 'span5', rows: 10 }
+      = f.input :doors_open_at,   input_html: { class: 'span1' }
+    .span2
+      = f.input :edition_number, input_html: { class: 'span1' }
+      = f.input :location, as: :text, input_html: { rows: 2, class: 'span2' }
+      - if @edition.gmaps?
+        = gmaps(map_options: { container_class: 'google-map-wrapper small', class: 'google-map', type: 'HYBRID', auto_zoom: false, zoom: 17 }, markers: { data: @edition.to_gmaps4rails })
+
+  .row
+    .span7
+      = f.button :submit, 'Opslaan', class: 'btn'
+      - if @edition.persisted?
+        of
+        = link_to 'verwijder editie', @edition, method: :delete, confirm: 'Zeker weten?'

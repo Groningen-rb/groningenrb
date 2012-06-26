@@ -14,8 +14,9 @@
 
 // libs
 @import 'bootstrap.css.scss';
-@import 'bootstrap-responsive.css';
+@import 'bootstrap-responsive.css.scss';
 @import 'mixins.css.scss';
+@import 'gmaps4rails.css';
 
 // Fonts
 @import url(http://fonts.googleapis.com/css?family=Pacifico|Cookie);
@@ -23,8 +24,9 @@
 
 // Paragraph font
 // Usage:
-// font-family: 'Droid Serif', serif;
-@import url(http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic);
+// font-family: 'Lora', serif;
+//@import url(http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic);
+@import url(http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic);
 
 // Application
 @import 'layout.css.scss';

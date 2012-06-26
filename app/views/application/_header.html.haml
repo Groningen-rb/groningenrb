@@ -1,21 +1,14 @@
-%header
-  .row
-    .span6.offset3
-      %h1
-        = link_to :root do
-          Groningen
-          %span>.rb
-        - if @upcoming
-          %small= l(@upcoming.starts_at, format: :long)
-  
-    .span3.social
-      - if current_user
-        .btn-group.pull-right
-          = link_to '#', class: "btn dropdown-toggle btn-inverse", data: { toggle: "dropdown" } do
-            = current_user.name
-            %span.caret
-          %ul.dropdown-menu      
-            %li= link_to 'Account', :account
-            %li= link_to 'Uitloggen', :signout
-      - else
-        = link_to 'Login met Github', '/auth/github', class: 'btn btn-inverse pull-right'
+%header.row
+  .span2
+    %h1
+      = link_to :root do
+        Groningen
+        %span.rb>.rb
+  %nav.span10>
+    - if current_user
+      - if can? :manage, :all
+        = link_to "Nieuwe editie", [:new, :edition]
+      = link_to 'Account',    :account
+      = link_to 'Uitloggen',  :signout
+    - else
+      = link_to 'Inloggen met Github', '/auth/github'

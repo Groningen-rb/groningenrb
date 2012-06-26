@@ -24,4 +24,9 @@ class ApplicationController < ActionController::Base
   end
   helper_method :current_user
   
+  def authenticate!
+    redirect_to :root, alert: 'Hier moet je voor ingelogd zijn!' if current_user.nil?
+  end
+  helper_method :authenticate!
+  
 end

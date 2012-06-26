@@ -11,7 +11,7 @@ group :assets do
 end
 
 # Server
-gem 'thin',           '~> 1.3.1'
+gem 'thin',             '~> 1.3.1'
 
 # Tools
 gem 'jquery-rails',     '~> 2.0.2'
@@ -23,13 +23,15 @@ gem 'simple_form',      '~> 2.0.2'
 gem 'redcarpet',        '~> 2.1.1'
 # gem 'chronic',          '~> 0.6.7' # Linguistic datetime input
 
+gem 'gmaps4rails',      '~> 1.5.2'
+
 # Authentication
 # gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'omniauth',         '~> 1.1.0'
 gem 'omniauth-github',  '~> 1.0.1'
 gem 'cancan',           '~> 1.6.7'
 
-gem 'twitter',          '~> 2.5.0'
+gem 'twitter',          '~> 3.0.0.rc1'
 
 group :production do
   gem 'pg',             '~> 0.13.2'

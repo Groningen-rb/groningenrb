@@ -11,14 +11,38 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120622102729) do
+ActiveRecord::Schema.define(:version => 20120626150551) do
 
-  create_table "editions", :force => true do |t|
-    t.text     "description"
-    t.datetime "starts_at"
-    t.datetime "created_at",           :null => false
-    t.datetime "updated_at",           :null => false
-    t.text     "rendered_description"
+  create_table "attendances", :force => true do |t|
+    t.integer "edition_id"
+    t.integer "user_id"
+  end
+
+  add_index "attendances", ["edition_id"], :name => "index_attendances_on_edition_id"
+  add_index "attendances", ["user_id"], :name => "index_attendances_on_user_id"
+
+  create_table "posts", :force => true do |t|
+    t.string   "title"
+    t.text     "body"
+    t.text     "rendered_body"
+    t.string   "type"
+    t.integer  "author_id"
+    t.datetime "doors_open_at"
+    t.string   "location"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.boolean  "gmaps",          :default => false
+    t.integer  "edition_number"
+    t.datetime "created_at",                        :null => false
+    t.datetime "updated_at",                        :null => false
+  end
+
+  create_table "testimonies", :force => true do |t|
+    t.string   "tweet_id"
+    t.string   "screen_name"
+    t.text     "content"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "users", :force => true do |t|
@@ -33,6 +57,8 @@ ActiveRecord::Schema.define(:version => 20120622102729) do
     t.datetime "created_at",                     :null => false
     t.datetime "updated_at",                     :null => false
     t.boolean  "admin",       :default => false
+    t.string   "twitter"
+    t.boolean  "public",      :default => true
   end
 
 end

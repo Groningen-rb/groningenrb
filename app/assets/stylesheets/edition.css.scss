@@ -1,25 +1,38 @@
-article.edition {
-      
-  > .description {
-    > h2 {
-      font-size: 30px;
-      line-height: 60px;
-      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
-    }
-    
-    > p {
-      font-family: 'Droid Serif', serif;
-      font-size: 16px;
-      line-height: 24px;
-      text-align: justify;
-      text-shadow: 0 1px 1px #666;
-      margin-bottom: 20px;
-      > a {
-        color: #2C3230;
+article.edition {}
+
+.attends.action { display: none; }
+
+
+
+/* Landscape phones and down */
+@media (max-width: 480px) {}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+  
+  article.edition {
+    > .description {
+      > h2 {
+        line-height: 36px !important;
+      }
+
+      > p {
+        > a {}
+        > em {}
+        > strong {}
       }
     }
+    > .map {}
   }
   
-  > .map {}
+}
+
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) {
   
+}
+
+/* Large desktop */
+@media (min-width: 1200px) {
+    
 }

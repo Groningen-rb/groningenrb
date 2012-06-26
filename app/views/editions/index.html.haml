@@ -1,5 +1,6 @@
-- @editions.each do |edition|
-  = render edition
+- @editions.each_with_index do |edition, i|
+  - l = (i == 4)
+  = render partial: edition, locals: { last: l }
   %hr
 
 = paginate @editions

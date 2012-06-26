@@ -1,17 +1,22 @@
--#.row
--#  %article.span12[edition]
--#    .details.row
--#      .description.span8= raw(edition.rendered_description)
--#      .map.span4
--#        %ul.thumbnails
--#          %li.span4
--#            .thumbnail
--#              %img{ src: 'http://placehold.it/300x200' }
-
 %article.row[edition]
-  .description.span8= raw(edition.rendered_description)
-  .map.span4
-    %ul.thumbnails
-      %li.span4
-        .thumbnail
-          %img{ src: 'http://placehold.it/300x200' }
+  .description.span7
+    = raw(edition.rendered_body)
+    
+    - if current_page?(controller: 'editions', action: 'show')
+      %aside.row
+        .span3
+          %h3 Locatie
+          %p
+            %em= edition.location
+        .span4
+          = gmaps(last_map: last, scripts: (!last ? :none : nil), map_options: { container_class: 'google-map-wrapper', class: 'google-map', id: "edition-map-#{edition.id}", type: 'HYBRID', auto_zoom: false, zoom: 17 }, markers: { data: edition.to_gmaps4rails })
+    - else
+      .row
+        .span12
+          = link_to 'Details', edition, class: 'btn'
+    
+    - if can? :manage, edition
+      .row
+        .span7
+          .well
+            = link_to 'Aanpassen', [:edit, edition], class: 'btn'

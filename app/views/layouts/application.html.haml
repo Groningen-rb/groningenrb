@@ -5,15 +5,23 @@
     = stylesheet_link_tag    "application", media: "all"
     = javascript_include_tag "application"
     
-    %meta{ name: "viewport", content: "width=device-width, initial-scale=1.0" }
     = csrf_meta_tags
+    %meta{ name: "viewport", content: "width=device-width, initial-scale=1.0" }
+    %meta{ name: "apple-mobile-web-app-capable", content: "yes" }
+    %meta{ name: "apple-mobile-web-app-status-bar-style", content: "black" }
 
   %body
     %section.container
-      
       = render 'header'
       = render 'flash'
-      %section.content= yield
-      = render 'footer'
+      %section.content.row
       
-      = render 'fork_me'
+        .span7
+          = yield
+        
+        .span5
+          = render 'newsletter_form'
+          = yield :sidebar
+          = render 'archive'
+          
+      = render 'footer'

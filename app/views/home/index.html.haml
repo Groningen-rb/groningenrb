@@ -1,16 +1,41 @@
--#- content_for :sponsors do
--#  %ul.thumbnails
--#    %li.span4
--#      .thumbnail
--#        %img{ src: 'http://placehold.it/300x150' }
--#    %li.span4
--#      .thumbnail
--#        %img{ src: 'http://placehold.it/300x150' }
--#    %li.span4
--#      .thumbnail
--#        %img{ src: 'http://placehold.it/300x150' }
+- content_for :sidebar do
+  = render 'upcoming'
+
+.grb-description
+  %p
+    Heb je ooit wel eens van Ruby gehoord of werk je dagelijks met Rails? 
+    Kom dan een keertje naar Groningen! Er is elke tweede donderdag van de maand
+    een Groningen.rb in het Launch Caf&eacute;.
+  %p
+    Onder het genot van het een paar ijskoude pilsjes, zul je te weten komen 
+    hoe groot de Noordelijke Ruby wereld is en wat er daarbinnen zoal gebeurt.
+  %p
+    Oh, en vergeet je niet voor onze nieuwsbrief in te schrijven!
+    
+
+%hr
+
 
 - if @upcoming
+  .row
+    .span4
+      %h2
+        Volgende editie:
+        = l(@upcoming.doors_open_at, format: :long)
+    .span3
+      - if current_user && !current_user.attends?(@upcoming)
+        = link_to [@upcoming, :attend], class: 'btn pull-right btn-large', method: :post do
+          %i.icon.icon-ok
+          Ik kom ook!
+      
+      - elsif current_user && current_user.attends?(@upcoming)
+        = link_to [@upcoming, :unattend], class: 'attends action btn pull-right btn-danger', method: :delete do
+          %i.icon.icon-remove
+          Ik kom toch nie...
+        %span.pull-right.btn.btn-success.attends.state
+          %i.icon.icon-ok
+          U komt
+
   = render @upcoming
 - else
-  = render partial: 'no_edition'
+  = render partial: 'editions/no_edition'

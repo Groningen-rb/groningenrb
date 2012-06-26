@@ -1,0 +1,6 @@
+#archive
+  %h3 Archief
+  %ul.nav.nav-pills.nav-stacked
+    - @archive.each do |edition|
+      %li[edition]= link_to "Groningen.rb ##{edition.edition_number} - #{l(edition.starts_at, format: :date_only)}", edition
+    %li= link_to "meer", :editions

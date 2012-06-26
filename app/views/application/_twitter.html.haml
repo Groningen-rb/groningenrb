@@ -1,0 +1,9 @@
+#twitter.row
+  .span12
+    %h3 Twitter
+    %ul.thumbnails
+      - Testimony.order('tweet_id DESC').limit(4).each do |testimony|
+        %li.span3
+          .well
+            %p= testimony.content
+          %p.pull-right= testimony.screen_name
