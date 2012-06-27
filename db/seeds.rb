@@ -39,7 +39,8 @@ editions = Edition.create!([
     doors_open_at: Time.zone.parse('2011-05-31 20:00'),
     edition_number: 5,
     title: 'Groningen.rb #5',
-    body: "De vijfde incarnatie van de Groningse Ruby User Group alweer! Deze keer is het weer tijd voor een <a href=\"http://agilepainrelief.com/notesfromatooluser/2008/10/tdd-randori-session.html\">Randori</a>.\n\nWe zijn welkom op het kantoor van <a href=\"http://www.factlink.com/\">Factlink</a> en ze sponsoren ook de drankjes! Bel aan bij Gino op <a href=\"http://goo.gl/maps/qtVn\">Stationsweg 3D</a> en vraag naar Groningen.rb of Factlink om binnen te komen.\n\nTeam Groningen.rb"
+    body: "De vijfde incarnatie van de Groningse Ruby User Group alweer! Deze keer is het weer tijd voor een <a href=\"http://agilepainrelief.com/notesfromatooluser/2008/10/tdd-randori-session.html\">Randori</a>.\n\nWe zijn welkom op het kantoor van <a href=\"http://www.factlink.com/\">Factlink</a> en ze sponsoren ook de drankjes! Bel aan bij Gino op <a href=\"http://goo.gl/maps/qtVn\">Stationsweg 3D</a> en vraag naar Groningen.rb of Factlink om binnen te komen.\n\nTeam Groningen.rb",
+    location: ''
   },
   {
     doors_open_at: Time.zone.parse('2011-07-25 20:00'),

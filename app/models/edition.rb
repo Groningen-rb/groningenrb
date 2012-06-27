@@ -1,6 +1,10 @@
 class Edition < Post
   
-  acts_as_gmappable address: 'location'
+  acts_as_gmappable process_geocoding:  true,
+                    validation:         false,
+                    address:            'location'
+                    # check_process:      true,
+                    # checker:            'gmaps'
   
   # Associations
   belongs_to :author, class_name: 'User', foreign_key: 'author_id'
