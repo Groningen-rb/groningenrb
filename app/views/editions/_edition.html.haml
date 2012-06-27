@@ -9,7 +9,7 @@
           %p
             %em= edition.location
         .span4
-          = gmaps(map_options: { container_class: 'google-map-wrapper', class: 'google-map', id: "edition-map-#{edition.id}", type: 'HYBRID', auto_zoom: false, zoom: 17 }, markers: { data: edition.to_gmaps4rails })
+          = gmaps(map_options: { container_class: 'google-map-wrapper', class: 'google-map', id: "edition_map_#{edition.id}", type: 'HYBRID', auto_zoom: false, zoom: 17 }, markers: { data: edition.to_gmaps4rails })
     - else
       .row
         .span12
