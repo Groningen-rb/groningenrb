@@ -1,6 +1,6 @@
 class Edition < Post
   
-  acts_as_gmappable address: 'location', process_geocoding: false
+  acts_as_gmappable address: 'location'
   
   # Associations
   belongs_to :author, class_name: 'User', foreign_key: 'author_id'
