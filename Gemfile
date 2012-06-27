@@ -21,6 +21,7 @@ gem 'kaminari',         '~> 0.13.0'
 # Data input
 gem 'simple_form',      '~> 2.0.2'
 gem 'redcarpet',        '~> 2.1.1'
+gem 'pygmentize',       '~> 0.0.3'
 # gem 'chronic',          '~> 0.6.7' # Linguistic datetime input
 
 gem 'gmaps4rails',      '~> 1.5.2'
