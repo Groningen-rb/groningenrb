@@ -8,7 +8,7 @@ class Testimony < ActiveRecord::Base
   
   def self.pull_tweets
     Twitter.favorites('groningenrb', since_id: maximum(:tweet_id)).each do |tweet|
-      unless exists?(tweet_id: tweet.id)
+      unless exists?(tweet_id: tweet.id.to_s)
         create!(
           tweet_id:     tweet.id.to_s,
           content:      tweet.text,
