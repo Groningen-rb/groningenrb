@@ -33,6 +33,8 @@ gem 'cancan',           '~> 1.6.7'
 
 gem 'twitter',          '~> 3.0.0.rc1'
 
+gem 'clockwork'
+
 group :production do
   gem 'pg',             '~> 0.13.2'
 end
