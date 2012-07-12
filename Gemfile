@@ -32,7 +32,7 @@ gem 'omniauth',         '~> 1.1.0'
 gem 'omniauth-github',  '~> 1.0.1'
 gem 'cancan',           '~> 1.6.7'
 
-gem 'twitter',          '~> 3.0.0.rc1'
+gem 'twitter',          '~> 3.1.0'
 
 gem 'clockwork'
 
