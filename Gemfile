@@ -38,6 +38,7 @@ gem 'clockwork'
 
 group :production do
   gem 'pg',             '~> 0.13.2'
+  gem 'newrelic_rpm'
 end
 
 group :development do
