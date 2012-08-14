@@ -4,7 +4,7 @@
       = link_to :root do
         Groningen
         %span.rb>.rb
-  %nav.span10>
+  %nav.hidden-phone.span10>
     - if current_user
       - if can? :manage, :all
         = link_to "Nieuwe editie", [:new, :edition]
